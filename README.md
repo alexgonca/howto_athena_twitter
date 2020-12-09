@@ -23,7 +23,7 @@ in the line before the last. Replace `s3://your-s3-bucket/your-new-folder/` with
 Now you can run it. If everything goes well, you should receive a `Query successful` message.
 A new Athena table called `twitter_stream` will have been created.
 
-To test, you can run a simple SQL statement, such as `select * from twitter_stream`.
+As a test, you can run a simple SQL statement, such as `select * from twitter_stream`.
 
 **An important observation**: The `CREATE TABLE` statement in this repository is based on
 the structure of tweets retrieved from Twitter's open Streaming API. If your tweets come
