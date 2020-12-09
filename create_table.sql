@@ -330,5 +330,5 @@ ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 WITH SERDEPROPERTIES (
   'serialization.format' = '1',
   'ignore.malformed.json' = 'true'
-) LOCATION '{bucket}'
+) LOCATION 's3://your-s3-bucket/your-new-folder/'
 TBLPROPERTIES ('has_encrypted_data'='false');
