@@ -1,4 +1,4 @@
-# How to query Twitter data on AWS Athena
+# How to query Twitter data on Amazon Athena
 
 ## Preparing your data
 
@@ -10,12 +10,11 @@ There is [a sample file with 13 tweets](/sample.json) in this repository.
 You can use that sample file to follow this tutorial.
 
 Create a new folder inside an AWS S3 bucket and upload that sample file into it.
-For the sake of this tutorial,
-let's suppose that new folder has the following URI: `s3://your-s3-bucket/your-new-folder/`
+Take note of that new folder's S3 path. You will need it in the next section.
 
-## Create the Twitter table on AWS Athena
+## Create the Twitter table on Amazon Athena
 
-Go to [AWS Athena's console](https://console.aws.amazon.com/athena) and
+Go to [Athena's console](https://console.aws.amazon.com/athena) and
 copy-paste the SQL statement in [`create_table.sql`](/create_table.sql) into a new query.
 
 Before running that query, you need to tweak it by changing the value of `LOCATION`
@@ -39,3 +38,6 @@ In particular, I think it is a great idea:
 * to compress data files to save up storage on S3.
 * to use S3 prefixes to partition the data (by the publication date of tweets, for instance).
 
+Athena is based on Presto. For that reason, remember that, in addition
+to [Athena's own SQL reference](https://docs.aws.amazon.com/athena/latest/ug/ddl-sql-reference.html),
+you can also use [Presto's SQL reference](https://prestosql.io/docs/current/sql.html). 
